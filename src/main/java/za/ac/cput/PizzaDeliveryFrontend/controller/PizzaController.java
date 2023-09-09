@@ -3,9 +3,7 @@ package za.ac.cput.PizzaDeliveryFrontend.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.PizzaDeliveryFrontend.domain.Pizza;
-import za.ac.cput.PizzaDeliveryFrontend.domain.Topping;
 import za.ac.cput.PizzaDeliveryFrontend.service.PizzaService;
-import za.ac.cput.PizzaDeliveryFrontend.service.ToppingService;
 
 import java.util.ArrayList;
 import java.util.Set;
