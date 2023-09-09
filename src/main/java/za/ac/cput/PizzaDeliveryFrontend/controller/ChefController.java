@@ -3,7 +3,7 @@ package za.ac.cput.PizzaDeliveryFrontend.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.PizzaDeliveryFrontend.domain.Chef;
-import za.ac.cput.PizzaDeliveryFrontend.service.ChefService;
+//import za.ac.cput.PizzaDeliveryFrontend.service.ChefService;
 
 import java.util.Set;
 /* ChefController.java
@@ -13,6 +13,7 @@ import java.util.Set;
 @RestController
 @RequestMapping("/chef")
 public class ChefController {
+    /*
     @Autowired
     private ChefService chefService;
 
@@ -36,4 +37,6 @@ public class ChefController {
     public Set<Chef> getall(){
         return chefService.getAll();
     }
+
+     */
 }

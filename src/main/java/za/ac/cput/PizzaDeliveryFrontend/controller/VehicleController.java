@@ -4,23 +4,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.PizzaDeliveryFrontend.domain.Vehicle;
 import za.ac.cput.PizzaDeliveryFrontend.factory.VehicleFactory;
-import za.ac.cput.PizzaDeliveryFrontend.service.VehicleService;
+//import za.ac.cput.PizzaDeliveryFrontend.service.VehicleService;
 
 import java.util.Set;
 
 @RestController
 @RequestMapping("/vehicle")
 public class VehicleController {
+    /*
     @Autowired
     private VehicleService vehicleService;
-/*
+
     @PostMapping("/create")
     public Vehicle create(@RequestBody Vehicle vehicle){
        Vehicle vehicleCreated = VehicleFactory.createVehicle("VW");
         return vehicleService.create(vehicleCreated);
     }
 
- */
+
 
     @GetMapping("/read/{id}")
     public Vehicle read(@PathVariable String id){
@@ -41,6 +42,10 @@ public class VehicleController {
     public Set<Vehicle> getAll(){
         return vehicleService.getAll();
     }
+
+     */
 }
+
+
 
 

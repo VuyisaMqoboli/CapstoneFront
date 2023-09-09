@@ -3,14 +3,14 @@ package za.ac.cput.PizzaDeliveryFrontend.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.PizzaDeliveryFrontend.domain.Employee;
-import za.ac.cput.PizzaDeliveryFrontend.service.EmployeeService;
+//import za.ac.cput.PizzaDeliveryFrontend.service.EmployeeService;
 
 import java.util.Set;
 
 /* EmployeeController.java
  Author: Dawood Kamalie (220147760)
  Date: 2nd August (last edited) 2023
-*/
+
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
@@ -37,4 +37,8 @@ public class EmployeeController {
     public Set<Employee> getall(){
         return employeeService.getAll();
     }
+
+
 }
+
+ */
