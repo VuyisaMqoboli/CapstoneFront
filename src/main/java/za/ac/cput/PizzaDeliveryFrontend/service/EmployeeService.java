@@ -11,7 +11,7 @@ import java.util.Set;
 /* EmployeeService.java
  Author: Dawood Kamalie (220147760)
  Date: 11th June (last updated) 2023
-*/
+
 @Service
 public interface EmployeeService extends za.ac.cput.PizzaDeliveryFrontend.service.IService<Employee, String> {
     Employee create(Employee employee);
@@ -21,3 +21,5 @@ public interface EmployeeService extends za.ac.cput.PizzaDeliveryFrontend.servic
 
     Set<Employee> getAll();
 }
+
+ */

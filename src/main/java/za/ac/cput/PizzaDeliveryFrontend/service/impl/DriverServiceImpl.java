@@ -1,13 +1,19 @@
 package za.ac.cput.PizzaDeliveryFrontend.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+import za.ac.cput.PizzaDeliveryFrontend.domain.Chef;
 import za.ac.cput.PizzaDeliveryFrontend.domain.Driver;
 
 
 import za.ac.cput.PizzaDeliveryFrontend.repository.IDriverRepository;
-import za.ac.cput.PizzaDeliveryFrontend.service.DriverService;
+//import za.ac.cput.PizzaDeliveryFrontend.service.DriverService;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -18,47 +24,20 @@ DriverServiceImpl.java
  */
 
 @Service
-public class DriverServiceImpl implements DriverService {
-    private IDriverRepository driverRepository;
+public class DriverServiceImpl {
+    private final RestTemplate restTemplate = new RestTemplate();
+    private final String serverUrl = "http://localhost:8080/api"; // Replace with your server's URL
+    public Set<Driver> getAllDrivers() {
+        String apiUrl = serverUrl + "/getAllDrivers"; // Replace with your actual endpoint
+        ResponseEntity<Driver[]> response = restTemplate.getForEntity(apiUrl, Driver[].class);
 
-    @Autowired
-    private DriverServiceImpl(IDriverRepository driverRepository){
-        this.driverRepository = driverRepository;
-    }
-
-
-
-    @Override
-    public Driver create(Driver driver) {
-        return this.driverRepository.save(driver);
-    }
-
-    @Override
-    public Driver read(String empId) {
-        return this.driverRepository.findById(empId).orElse(null);
-    }
-
-    @Override
-    public Driver update(Driver driver) {
-        if(this.driverRepository.existsById(driver.getEmpId())){
-            return this.driverRepository.save(driver);
-        }else{
-            return null;
+        if (response.getStatusCode().is2xxSuccessful()) {
+            Driver[] drivers = response.getBody();
+            return new HashSet<>(Arrays.asList(drivers));
+        } else {
+            // Handle the error or return an empty list
+            return Collections.emptySet();
         }
-
-    }
-
-    @Override
-    public boolean delete(String empId) {
-        if(this.driverRepository.existsById(empId)){
-            this.driverRepository.deleteById(empId);
-            return true;
-        }
-        return false;
-    }
-    @Override
-    public Set<Driver> getAll() {
-        return this.driverRepository.findAll().stream().collect(Collectors.toSet());
     }
 }
 

@@ -4,13 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.PizzaDeliveryFrontend.domain.Driver;
 import za.ac.cput.PizzaDeliveryFrontend.factory.DriverFactory;
-import za.ac.cput.PizzaDeliveryFrontend.service.DriverService;
+//import za.ac.cput.PizzaDeliveryFrontend.service.DriverService;
 
 import java.util.Set;
 
 @RestController
 @RequestMapping("/driver")
 public class DriverController {
+
+    /*
     @Autowired
     private DriverService driverService;
 
@@ -22,7 +24,7 @@ public class DriverController {
 
     }
 
-     */
+
 
     @GetMapping("/read/{id}")
     public Driver read(@PathVariable String id){
@@ -44,6 +46,12 @@ public class DriverController {
         return driverService.getAll();
     }
 
+     */
+
 }
+
+
+
+
 
 

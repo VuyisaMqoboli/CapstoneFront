@@ -9,7 +9,7 @@ import java.util.Set;
 Author: Azhar Allie Mohammed(217250513)
 Date: 11/06/2023
 
- */
+
 public interface VehicleService extends IService<Vehicle, String>{
     Vehicle create(Vehicle vehicle);
     Vehicle read(String vehicleId);
@@ -20,3 +20,5 @@ public interface VehicleService extends IService<Vehicle, String>{
     Set<Vehicle> getAll();
 
 }
+
+ */
