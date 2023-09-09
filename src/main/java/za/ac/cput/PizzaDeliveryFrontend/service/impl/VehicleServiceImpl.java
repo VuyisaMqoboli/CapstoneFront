@@ -5,57 +5,35 @@ Date: 11/06/2023
  */
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+import za.ac.cput.PizzaDeliveryFrontend.domain.Driver;
 import za.ac.cput.PizzaDeliveryFrontend.domain.Vehicle;
 import za.ac.cput.PizzaDeliveryFrontend.repository.IVehicleRepository;
-import za.ac.cput.PizzaDeliveryFrontend.service.VehicleService;
+//import za.ac.cput.PizzaDeliveryFrontend.service.VehicleService;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
-public class VehicleServiceImpl implements VehicleService {
-    private IVehicleRepository vehicleRepository;
+public class VehicleServiceImpl {
+    private final RestTemplate restTemplate = new RestTemplate();
+    private final String serverUrl = "http://localhost:8080/api"; // Replace with your server's URL
+    public Set<Vehicle> getAllVehicles() {
+        String apiUrl = serverUrl + "/getAllVehicles"; // Replace with your actual endpoint
+        ResponseEntity<Vehicle[]> response = restTemplate.getForEntity(apiUrl, Vehicle[].class);
 
-    @Autowired
-    private VehicleServiceImpl(IVehicleRepository vehicleRepository){
-        this.vehicleRepository = vehicleRepository;
-    }
-
-
-
-    @Override
-    public Vehicle create(Vehicle vehicle) {
-        return this.vehicleRepository.save(vehicle);
-    }
-
-    @Override
-    public Vehicle read(String vehicleId) {
-        return this.vehicleRepository.findById(vehicleId).orElse(null);
-    }
-
-    @Override
-    public Vehicle update(Vehicle vehicle) {
-        if(this.vehicleRepository.existsById(vehicle.getVehicleId())){
-            return this.vehicleRepository.save(vehicle);
-        }else{
-            return null;
+        if (response.getStatusCode().is2xxSuccessful()) {
+            Vehicle[] vehicles = response.getBody();
+            return new HashSet<>(Arrays.asList(vehicles));
+        } else {
+            // Handle the error or return an empty list
+            return Collections.emptySet();
         }
-
-    }
-
-    @Override
-    public boolean delete(String vehicleId) {
-        if(this.vehicleRepository.existsById(vehicleId)){
-            this.vehicleRepository.deleteById(vehicleId);
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public Set<Vehicle> getAll() {
-        return this.vehicleRepository.findAll().stream().collect(Collectors.toSet());
     }
 }
 

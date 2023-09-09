@@ -3,13 +3,13 @@ package za.ac.cput.PizzaDeliveryFrontend.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.PizzaDeliveryFrontend.domain.Topping;
-import za.ac.cput.PizzaDeliveryFrontend.service.ToppingService;
+//import za.ac.cput.PizzaDeliveryFrontend.service.ToppingService;
 
 import java.util.ArrayList;
 /* ToppingController.java
  Author: Timothy Lombard (220154856)
  Date: 17th June (last updated) 2023
-*/
+
 @RestController
 @RequestMapping("/topping")
 public class ToppingController {
@@ -45,4 +45,6 @@ public class ToppingController {
 
 
 }
+
+ */
 

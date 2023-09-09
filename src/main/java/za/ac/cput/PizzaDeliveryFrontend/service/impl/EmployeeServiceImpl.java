@@ -1,12 +1,15 @@
 package za.ac.cput.PizzaDeliveryFrontend.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 import za.ac.cput.PizzaDeliveryFrontend.domain.Employee;
+import za.ac.cput.PizzaDeliveryFrontend.domain.Topping;
 import za.ac.cput.PizzaDeliveryFrontend.repository.IEmployeeRepository;
-import za.ac.cput.PizzaDeliveryFrontend.service.EmployeeService;
+//import za.ac.cput.PizzaDeliveryFrontend.service.EmployeeService;
 
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /* EmployeeServiceImpl.java
@@ -14,42 +17,23 @@ import java.util.stream.Collectors;
  Date: 11th June (last updated) 2023
 */
 @Service
-public class EmployeeServiceImpl implements EmployeeService {
-    private IEmployeeRepository empRepo;
-    @Autowired
-    private EmployeeServiceImpl(IEmployeeRepository empRepo){this.empRepo = empRepo;}
+public class EmployeeServiceImpl {
+    private final RestTemplate restTemplate = new RestTemplate();
+    private final String serverUrl = "http://localhost:8080/api"; // Replace with your server's URL
 
-    @Override
-    public Employee create(Employee employee) {
-        return this.empRepo.save(employee);
-    }
 
-    @Override
-    public Employee read(String empId) {
-        return this.empRepo.findById(empId).orElse(null);
-    }
 
-    @Override
-    public Employee update(Employee employee) {
-        if (this.empRepo.existsById(employee.getEmpId())){
-            return this.empRepo.save(employee);
-        }else {
-            return null;
+    public Set<Employee> getAllEmployees() {
+        String apiUrl = serverUrl + "/getAllEmployees"; // Replace with your actual endpoint
+        ResponseEntity<Employee[]> response = restTemplate.getForEntity(apiUrl, Employee[].class);
+
+        if (response.getStatusCode().is2xxSuccessful()) {
+            Employee[] employees = response.getBody();
+            return new HashSet<>(Arrays.asList(employees));
+        } else {
+            // Handle the error or return an empty list
+            return Collections.emptySet();
         }
-    }
-
-    @Override
-    public boolean delete(String empId) {
-        if (this.empRepo.existsById(empId)){
-            this.empRepo.deleteById(empId);
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public Set<Employee> getAll() {
-        return this.empRepo.findAll().stream().collect(Collectors.toSet());
     }
 
 
