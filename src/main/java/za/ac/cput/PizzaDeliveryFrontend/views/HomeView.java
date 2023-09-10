@@ -36,7 +36,7 @@ public class HomeView extends VerticalLayout {
 //        imgPizza = new Image("/images/pizza_wallpaper.png", "Pizza image");
 
         aboutLink = new RouterLink("About Us", AboutUsView.class);
-        menuLink = new RouterLink("Menu", AboutUsView.class);
+        menuLink = new RouterLink("Menu", MenuView.class);
 
         btnSignUp = new Button("Sign Up");
         btnLogin = new Button("Login");
@@ -79,15 +79,15 @@ public class HomeView extends VerticalLayout {
 
 //      Button events
         btnSignUp.addClickListener(e -> {
-            getUI().ifPresent(ui -> ui.navigate(AboutUsView.class));
+            getUI().ifPresent(ui -> ui.navigate(SignUpView.class));
         });
 
         btnLogin.addClickListener(e -> {
-            getUI().ifPresent(ui -> ui.navigate(AboutUsView.class));
+            getUI().ifPresent(ui -> ui.navigate(LoginView.class));
         });
 
         btnOrderNow.addClickListener(e -> {
-            getUI().ifPresent(ui -> ui.navigate(AboutUsView.class));
+            getUI().ifPresent(ui -> ui.navigate(MenuView.class));
         });
 
 
