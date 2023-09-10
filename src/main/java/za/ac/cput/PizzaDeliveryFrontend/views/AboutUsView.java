@@ -52,9 +52,9 @@ public class AboutUsView extends VerticalLayout {
     public AboutUsView(){
 
         aboutUs = new Html("<div>ABOUT US</div>");
-        value = new Html("<div>Our values: Quality, freshness, and customer satisfaction are the cornerstones of our business. We believe that every pizza we create should be a masterpiece, made with the finest ingredients and served with a smile.</div>");
-        ingredients = new Html("<div>Quality ingredients: We source the freshest, locally-sourced ingredients to create our signature pizzas. Our commitment to quality means you can taste the difference in every bite.</div>");
-        process = new Html("<div>Our process: From hand-tossed dough to carefully selected toppings, every step in our pizza making process is a labour of love. We follow time-honored traditions to ensure each pizza is a culinary masterpiece.</div>");
+        value = new Html("<div><b>Our values:</b> Quality, freshness, and customer satisfaction are the cornerstones of our business. We believe that every pizza we create should be a masterpiece, made with the finest ingredients and served with a smile.</div>");
+        ingredients = new Html("<div><b>Quality ingredients:</b> We source the freshest, locally-sourced ingredients to create our signature pizzas. Our commitment to quality means you can taste the difference in every bite.</div>");
+        process = new Html("<div><b>Our process:</b> From hand-tossed dough to carefully selected toppings, every step in our pizza making process is a labour of love. We follow time-honored traditions to ensure each pizza is a culinary masterpiece.</div>");
         closeOff = new Html("<div>We invite you to explore our menu and experience the magic of our pizzeria. Place your order now and taste the difference for yourself!\n" +
                 "\n" +
                 "Thank you for choosing us. We can't wait to serve you a slice of happiness.</div>");
