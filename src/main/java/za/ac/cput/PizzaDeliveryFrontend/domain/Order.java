@@ -29,7 +29,7 @@ public class Order {
     private Customer customer;
     private OrderStatus orderStatus;
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "restaurantID", referencedColumnName = "restaurantID")
+    @JoinColumn(name = "pizzeriaID", referencedColumnName = "pizzeriaID")
     private za.ac.cput.PizzaDeliveryFrontend.domain.Pizzeria pizzeria;
 
     protected Order(){
