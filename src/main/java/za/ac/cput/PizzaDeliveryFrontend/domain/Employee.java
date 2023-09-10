@@ -13,6 +13,7 @@ import java.util.Objects;
 @Entity
 public class Employee {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected String empId;
 
     protected String name;

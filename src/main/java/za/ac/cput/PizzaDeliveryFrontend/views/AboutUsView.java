@@ -21,7 +21,7 @@ import java.util.Set;
 public class AboutUsView extends VerticalLayout {
 
     @Autowired
-    private  EmployeeServiceImpl employeeService;
+    private EmployeeServiceImpl employeeService;
 
     @Autowired
     private ChefServiceImpl chefService;
