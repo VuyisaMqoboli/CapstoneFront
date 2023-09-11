@@ -1,5 +1,6 @@
 package za.ac.cput.PizzaDeliveryFrontend.views;
 
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
@@ -9,14 +10,18 @@ import com.vaadin.flow.router.Route;
 import org.springframework.beans.factory.annotation.Autowired;
 import za.ac.cput.PizzaDeliveryFrontend.service.impl.PizzaServiceImpl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Route("/menu")
 public class MenuView extends VerticalLayout {
-    @Autowired
-    private PizzaServiceImpl pizzaService;
     H1 h1 = new H1("Menu");
     Div shell, item1, item2, item3, item4;
 
     Paragraph p = new Paragraph("Please select an item:");
+    ArrayList<String> items = new ArrayList<>();
+    Button btn;
+
 
     public MenuView(){
         shell = new Div(
@@ -30,9 +35,15 @@ public class MenuView extends VerticalLayout {
         item2.addClassName("item2");
         item3.addClassName("item3");
         item4.addClassName("item4");
+        items.add("Chicken Pizza\n");
+        items.add("Meat Pizza\n");
+        items.add("Chicken Pizza...with pineapple\n");
 
+        btn = new Button("Checkout");
 
         add(h1, p, shell);
+        items.forEach((n) -> add(n));
+        add(btn);
 
     }
 
