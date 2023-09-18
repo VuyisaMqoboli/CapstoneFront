@@ -9,18 +9,11 @@ import java.util.Objects;
  Author: Timothy Lombard (220154856)
  Date: 21st July (last updated) 2023
 */
-@Entity
-@IdClass(PizzaToppingId.class)
+
 public class PizzaTopping {
 
-    @Id
-    @ManyToOne(cascade = CascadeType.ALL)//FK relationship
-    @JoinColumn(name = "pizzaId", referencedColumnName = "PizzaId")
     private Pizza pizzaId;
 
-    @Id
-    @ManyToOne(cascade = CascadeType.ALL)//FK relationship
-    @JoinColumn(name = "toppingId", referencedColumnName = "toppingId")
     private Topping toppingId;
 
     protected PizzaTopping(){

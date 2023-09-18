@@ -12,7 +12,7 @@ import java.util.Objects;
  * Author: Dawood Kamalie  (220147760)
  * Date: 7/4/2023
  * */
-@Entity
+
 public class Chef extends za.ac.cput.PizzaDeliveryFrontend.domain.Employee {
     private String title;
     private String culinaryExperience;

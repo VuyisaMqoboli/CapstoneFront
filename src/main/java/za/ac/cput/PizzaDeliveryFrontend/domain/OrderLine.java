@@ -12,19 +12,12 @@ Date: 04 April 2023
 Last update: 31 July 2023
  */
 
-@Entity
 public class OrderLine {
-    @Id
+
     private String orderLineId;
     private int quantity;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "orderId", referencedColumnName = "orderId")
     private Order order;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "pizzaId", referencedColumnName = "pizzaId")
     private za.ac.cput.PizzaDeliveryFrontend.domain.Pizza pizza;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "billId", referencedColumnName = "billId")
     private Bill bill;
 
     protected OrderLine() {}

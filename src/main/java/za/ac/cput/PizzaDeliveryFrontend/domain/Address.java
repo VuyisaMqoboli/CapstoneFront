@@ -13,9 +13,9 @@ Date: 04 April 2023
 Last update: July 2023
  */
 
-@Entity
+
 public class Address {
-    @Id
+
     private String addressId;
     private String streetNumber;
     private String streetName;

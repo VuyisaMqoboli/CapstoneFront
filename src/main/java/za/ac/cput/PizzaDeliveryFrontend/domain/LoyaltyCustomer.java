@@ -11,7 +11,7 @@ Author: Vuyisa Lutho Mqoboli (219191018)
 Date: 04 April 2023
  */
 
-@Entity
+
 public class LoyaltyCustomer extends Customer {
 
     private LocalDate dateJoined;

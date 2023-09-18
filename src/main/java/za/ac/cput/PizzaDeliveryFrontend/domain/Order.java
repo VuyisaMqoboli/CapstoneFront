@@ -12,24 +12,18 @@ import java.util.Objects;
  Date: 4th August (last updated) 2023
  ////
 */
-@Entity
-@Table(name="orderclass")
+
 public class Order {
 
     public enum OrderStatus{
         NEW, HOLD, SHIPPED, DELIVERED, CLOSED
     }
 
-    @Id
     private String orderId;
     private LocalDate createDate;
     private LocalTime time;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "customerID", referencedColumnName = "customerID")
     private Customer customer;
     private OrderStatus orderStatus;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "pizzeriaID", referencedColumnName = "pizzeriaID")
     private za.ac.cput.PizzaDeliveryFrontend.domain.Pizzeria pizzeria;
 
     protected Order(){
