@@ -12,9 +12,9 @@ Bill entity
 Author: Vuyisa Lutho Mqoboli (219191018)
 Date: 04 April 2023
  */
-@Entity
+
 public class Bill {
-    @Id
+
     private String billId;
     private double totalBill;
 

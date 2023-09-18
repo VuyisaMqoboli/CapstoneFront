@@ -7,11 +7,7 @@ import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
-import org.springframework.beans.factory.annotation.Autowired;
-import za.ac.cput.PizzaDeliveryFrontend.service.impl.PizzaServiceImpl;
-
 import java.util.ArrayList;
-import java.util.List;
 
 @Route("/menu")
 public class MenuView extends VerticalLayout {

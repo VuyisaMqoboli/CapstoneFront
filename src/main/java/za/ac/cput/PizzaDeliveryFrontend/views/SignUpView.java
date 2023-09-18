@@ -3,7 +3,6 @@ package za.ac.cput.PizzaDeliveryFrontend.views;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
-import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.PasswordField;
@@ -12,8 +11,6 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.dom.Style;
 import org.springframework.beans.factory.annotation.Autowired;
-import za.ac.cput.PizzaDeliveryFrontend.service.impl.LoyaltyCustomerServiceImpl;
-
 import java.util.InputMismatchException;
 
 /*
@@ -24,8 +21,8 @@ import java.util.InputMismatchException;
 @Route("/signup")
 public class SignUpView extends VerticalLayout {
 
-    @Autowired
-    LoyaltyCustomerServiceImpl loyaltyCustomerService;
+    //@Autowired
+//    LoyaltyCustomerServiceImpl loyaltyCustomerService;
     private Text alreadyWithUs;
 //    private Text checkIfYoureaLoyaltyCustomer;
     private RouterLink loginLink;

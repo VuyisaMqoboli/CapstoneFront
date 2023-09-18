@@ -7,9 +7,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.dom.Style;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.component.button.Button;
-import org.springframework.beans.factory.annotation.Autowired;
 import za.ac.cput.PizzaDeliveryFrontend.domain.*;
-import za.ac.cput.PizzaDeliveryFrontend.service.impl.*;
 import java.util.Set;
 
 /* AboutUsView.java
@@ -20,17 +18,17 @@ import java.util.Set;
 @Route("/about")
 public class AboutUsView extends VerticalLayout {
 
-    @Autowired
-    private EmployeeServiceImpl employeeService;
-
-    @Autowired
-    private ChefServiceImpl chefService;
-
-    @Autowired
-    private DriverServiceImpl driverService;
-
-    @Autowired
-    private VehicleServiceImpl vehicleService;
+//    @Autowired
+//    private EmployeeServiceImpl employeeService;
+//
+//    @Autowired
+//    private ChefServiceImpl chefService;
+//
+//    @Autowired
+//    private DriverServiceImpl driverService;
+//
+//    @Autowired
+//    private VehicleServiceImpl vehicleService;
 
     private Html aboutUs;
     private Html value;
@@ -104,67 +102,67 @@ public class AboutUsView extends VerticalLayout {
         seeVehicleStyle.set("font-weight", "bold");
 
         viewEmployee.addClickListener(event -> {
-            try {
-                Set<Employee> employees = employeeService.getAllEmployees();
+          //  try {
+                //Set<Employee> employees = employeeService.getAllEmployees();
 
-                employeeContainer.removeAll();
+              //  employeeContainer.removeAll();
 
 
-                employees.forEach(employee -> {
-                    employeeContainer.add(createEmployeeSpan(employee));
-                });
-            } catch (Exception e) {
+                //employees.forEach(employee -> {
+                 //   employeeContainer.add(createEmployeeSpan(employee));
+            //    });
+            //} //catch (Exception e) {
 
-                System.out.println("Failed to retrieve employees. Please try again later." + e.getMessage());
-            }
+               // System.out.println("Failed to retrieve employees. Please try again later." + e.getMessage());
+          //  }
         });
 
         viewChef.addClickListener(event -> {
-            try {
-                Set<Chef> chefs = chefService.getAllChefs();
-
-                chefContainer.removeAll();
-
-
-                chefs.forEach(chef -> {
-                    chefContainer.add(createChefSpan(chef));
-                });
-            } catch (Exception e) {
-
-                System.out.println("Failed to retrieve chefs. Please try again later." + e.getMessage());
-            }
+//            try {
+//                Set<Chef> chefs = chefService.getAllChefs();
+//
+//                chefContainer.removeAll();
+//
+//
+//                chefs.forEach(chef -> {
+//                    chefContainer.add(createChefSpan(chef));
+//                });
+//            } catch (Exception e) {
+//
+//                System.out.println("Failed to retrieve chefs. Please try again later." + e.getMessage());
+//            }
         });
 
         viewDriver.addClickListener(event -> {
-            try {
-                Set<Driver> drivers = driverService.getAllDrivers();
-
-                driverContainer.removeAll();
-
-
-                drivers.forEach(driver -> {
-                    driverContainer.add(createDriverSpan(driver));
-                });
-            } catch (Exception e) {
-
-                System.out.println("Failed to retrieve chefs. Please try again later." + e.getMessage());
-            }
+            //try {
+//                Set<Driver> drivers = driverService.getAllDrivers();
+//
+//                driverContainer.removeAll();
+//
+//
+//                drivers.forEach(driver -> {
+//                    driverContainer.add(createDriverSpan(driver));
+//                });
+//            } catch (Exception e) {
+//
+//                System.out.println("Failed to retrieve chefs. Please try again later." + e.getMessage());
+//            }
         });
 
         viewVehicle.addClickListener(event -> {
-            try {
-                Set<Vehicle> vehicles = vehicleService.getAllVehicles();
-
-                vehicleContainer.removeAll();
-
-
-                vehicles.forEach(vehicle -> {
-                    vehicleContainer.add(createVehicleSpan(vehicle));
-                });
-            } catch (Exception e) {
-
-                System.out.println("Failed to retrieve chefs. Please try again later." + e.getMessage());
-            }
+//            try {
+//                Set<Vehicle> vehicles = vehicleService.getAllVehicles();
+//
+//                vehicleContainer.removeAll();
+//
+//
+//                vehicles.forEach(vehicle -> {
+//                    vehicleContainer.add(createVehicleSpan(vehicle));
+//                });
+//            } catch (Exception e) {
+//
+//                System.out.println("Failed to retrieve chefs. Please try again later." + e.getMessage());
+//            }
         });
 
 

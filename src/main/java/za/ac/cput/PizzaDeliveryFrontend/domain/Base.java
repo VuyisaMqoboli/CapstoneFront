@@ -10,7 +10,7 @@ import java.util.Objects;
  Author: Timothy Lombard (220154856)
  Date: 30th July (last updated) 2023
 */
-@Entity
+
 public class Base {
 
     public enum BaseCrust{
@@ -25,7 +25,7 @@ public class Base {
     }
 
 
-    @Id
+
     private String baseId;
     private BaseCrust crust;
     private BaseThickness thickness;
