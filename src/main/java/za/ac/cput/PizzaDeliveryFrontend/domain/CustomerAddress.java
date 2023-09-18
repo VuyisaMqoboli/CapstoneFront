@@ -12,18 +12,11 @@ import jakarta.persistence.*;
 
 import java.util.Objects;
 
-@Entity
-@IdClass(za.ac.cput.PizzaDeliveryFrontend.domain.CustomerAddressId.class)
+
 public class CustomerAddress {
 
-    @Id
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "customerID", referencedColumnName = "customerID")
     private Customer customerID;
 
-    @Id
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "addressId", referencedColumnName = "addressId")
     private Address addressId;
 
     protected CustomerAddress() {

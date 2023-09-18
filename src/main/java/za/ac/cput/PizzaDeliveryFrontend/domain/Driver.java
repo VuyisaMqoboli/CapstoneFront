@@ -4,14 +4,11 @@ Driver.java
 Author: Azhar Allie Mohammed (217250513)
 Date: 04/04/2023
 */
-import jakarta.persistence.*;
 
 import java.util.Objects;
-@Entity
+
 public class Driver extends Employee{
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "vehicleId", referencedColumnName = "vehicleId")
     private Vehicle vehicle;
 
     protected Driver() {

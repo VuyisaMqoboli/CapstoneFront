@@ -9,13 +9,11 @@ import java.util.Objects;
  Author: Timothy Lombard (220154856)
  Date: 21st July (last updated) 2023
 */
-@Entity
 public class Pizza {
 
     public enum Size{
         EXTRA_SMALL, SMALL, MEDIUM, LARGE, EXTRA_LARGE
     }
-    @Id
     private String pizzaId;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "baseId", referencedColumnName = "baseId")

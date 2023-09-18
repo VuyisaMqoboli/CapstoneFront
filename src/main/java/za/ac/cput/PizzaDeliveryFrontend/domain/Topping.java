@@ -9,10 +9,9 @@ import java.util.Objects;
  Author: Timothy Lombard (220154856)
  Date: 30th July (last updated) 2023
 */
-@Entity
+
 public class Topping {
 
-    @Id
     private String toppingId;
     private String name;
     private String description;

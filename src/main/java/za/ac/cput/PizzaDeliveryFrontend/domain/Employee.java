@@ -10,18 +10,16 @@ import java.util.Objects;
  * Author: Dawood Kamalie (220147760)
  * Date: 5 April 2023
  * */
-@Entity
+
 public class Employee {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     protected String empId;
 
     protected String name;
     protected String surname;
     protected String phoneNumber;
     protected String email;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "pizzeriaID", referencedColumnName = "pizzeriaID")
+
     protected za.ac.cput.PizzaDeliveryFrontend.domain.Pizzeria pizzeria;
 
     protected Employee() {
